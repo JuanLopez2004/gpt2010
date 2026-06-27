@@ -1,17 +1,218 @@
-    body {
-        font-family: Arial;
-        width: 600px;
-        margin: 40px auto;
-    }
+/* variables */
+:root {
+    --xp-titlebar-start: #0B3998;
+    --xp-titlebar-end: #1C8AE8;
+    --xp-bg: #D6E4F4;
+    --xp-window-bg: #ECE9D8;
+    --xp-chat-bg: #FFFFFF;
+    --xp-input-bg: #FFFFFF;
+    --xp-border: #7A9EB5;
+    --xp-menubar-bg: #D6E4F4;
+    --xp-statusbar-bg: #D6E4F4;
+    --xp-toolbar-bg: #EEF4FB;
+    --xp-button-bg: #ECE9D8;
+    --xp-button-border: #7A9EB5;
+    --spacing-small: 4px;
+    --spacing-medium: 8px;
+}
 
-    textarea {
-        width: 100%;
-        height: 120px;
-    }
+/* global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    #response {
-        margin-top: 20px;
-        white-space: pre-wrap;
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    background-image: url('../imgs/bg2.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 86vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* windows */
+.msn-window {
+    width: 520px;
+    border: 2px solid #0831D9;
+    border-radius: 6px 6px 0 0;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* title */
+.msn-titlebar {
+    background: linear-gradient(180deg, var(--xp-titlebar-end), var(--xp-titlebar-start));
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.msn-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.msn-window-controls {
+    display: flex;
+    gap: 2px;
+}
+
+.win-btn {
+    width: 18px;
+    height: 16px;
+    font-size: 9px;
+    background: linear-gradient(180deg, #AECBEE, #7EAAD4);
+    border: 1px solid #4a7fb5;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+}
+
+.win-btn:hover {
+    background: linear-gradient(180deg, #C9DEFF, #99BBDD);
+}
+
+.win-btn-close {
+    background: linear-gradient(180deg, #E8896A, #C04A2E);
+    color: #fff;
+    border-color: #8B2020;
+}
+
+.win-btn-close:hover {
+    background: linear-gradient(180deg, #FF9977, #D05535);
+}
+
+/* menu */
+.msn-menubar {
+    background: var(--xp-menubar-bg);
+    border-bottom: 1px solid var(--xp-border);
+    padding: 2px 6px;
+    display: flex;
+    gap: 16px;
+}
+
+.msn-menubar span {
+    color: #000;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 11px;
+}
+
+.msn-menubar span:hover {
+    background-color: #316AC5;
+    color: #fff;
+}
+
+/* body */
+.msn-body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--xp-window-bg);
+    flex: 1;
+}
+
+/* chat */
+.msn-chat-area {
+    background-color: var(--xp-chat-bg);
+    border: 1px inset var(--xp-border);
+    margin: 6px;
+    min-height: 220px;
+    padding: 8px;
+    overflow-y: auto;
+    font-size: 12px;
+    font-family: Tahoma, Arial, sans-serif;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* input */
+.msn-input-section {
+    border-top: 1px solid var(--xp-border);
+    margin: 0 6px 6px;
+}
+
+.msn-toolbar {
+    background: var(--xp-toolbar-bg);
+    border: 1px solid var(--xp-border);
+    border-bottom: none;
+    padding: 3px 6px;
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.msn-toolbar span:hover {
+    background-color: #C9D9F0;
+    padding: 1px 3px;
+}
+
+.msn-input-row {
+    display: flex;
+    border: 1px solid var(--xp-border);
+}
+
+textarea {
+    flex: 1;
+    height: 70px;
+    padding: 6px;
+    background-color: var(--xp-input-bg);
+    border: none;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    resize: none;
+    outline: none;
+}
+
+/* send column */
+
+.msn-send-col {
+    display: flex;
+    align-items: flex-end;
+    padding: 4px;
+    background: var(--xp-window-bg);
+    border-left: 1px solid var(--xp-border);
+}
+
+.btn-send {
+    padding: 4px 14px;
+    background: linear-gradient(180deg, #F0F0EA, #DDDDD6);
+    border: 1px solid var(--xp-button-border);
+    border-radius: 3px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: 1px 1px 0 #fff inset;
+}
+
+.btn-send:hover {
+    background: linear-gradient(180deg, #C9DEFF, #AACBEE);
+}
+
+.btn-send:active {
+    background: linear-gradient(180deg, #AACBEE, #C9DEFF);
+    box-shadow: none;
+}
+
+/* status bar */
+.msn-statusbar {
+    background: var(--xp-statusbar-bg);
+    border-top: 1px solid var(--xp-border);
+    padding: 2px 8px;
+    font-size: 10px;
+    color: #444;
+}

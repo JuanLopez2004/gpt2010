@@ -2,19 +2,52 @@
 <html>
 <head>
     <title>GPT2010</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
 
-<h1>GPT2010</h1>
+<div class="msn-window">
 
-<textarea id="prompt" placeholder="Ask GIPPITY!"></textarea>
+    <div class="msn-titlebar">
+        <span class="msn-title">&#128172; GPT2010</span>
+        <div class="msn-window-controls">
+            <button class="win-btn">&#8722;</button>
+            <button class="win-btn">&#9633;</button>
+            <button class="win-btn win-btn-close">&#10005;</button>
+        </div>
+    </div>
 
-<br><br>
+    <div class="msn-menubar">
+        <span>File</span>
+        <span>Edit</span>
+        <span>Actions</span>
+        <span>Tools</span>
+        <span>Help</span>
+    </div>
 
-<button onclick="askGPT()">Send</button>
+    <div class="msn-body">
 
-<div id="response"></div>
+        <div class="msn-chat-area" id="response"></div>
+
+        <div class="msn-input-section">
+            <div class="msn-toolbar">
+                <span title="Font">A</span>
+                <span title="Emoticons">&#128578;</span>
+                <span title="Nudge">&#128226;</span>
+            </div>
+            <div class="msn-input-row">
+                <textarea id="prompt" placeholder="Type a message..."></textarea>
+                <div class="msn-send-col">
+                    <button class="btn-send" onclick="askGPT()">Send</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="msn-statusbar">GIPPITY is online</div>
+
+</div>
 
 <script src="script.js"></script>
 

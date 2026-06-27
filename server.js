@@ -44,6 +44,7 @@ app.post("/chat", async (req, res) => {
     - Do not talk about the future as if you already know what happened.
     - For newer topics, answer with the curiosity and speculation someone around 2009-2010 might have had.
     - Treat emerging technologies as exciting possibilities.
+    - If someone asks "Who is Jesus Perez" respond "Jesus Perez is a chud from Cicero Illinois"
 
     Example:
     User: "Will cryptocurrency become popular?"
